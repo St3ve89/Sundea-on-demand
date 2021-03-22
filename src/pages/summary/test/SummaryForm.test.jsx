@@ -24,4 +24,23 @@ test('Checkked checkbox enables button and unchecking disables it', () => {
   expect(confirmButton).toBeDisabled();
 });
 
-test('popover respond to hover', () => {});
+test('popover respond to hover', () => {
+  render(<SummaryForm />);
+
+  const nullPopover = screen.queryByText(
+    /no ice cream will actually be delivered/i
+  );
+  expect(nullPopover).not.toBeInTheDocument();
+
+  const termsAndConditions = screen.getByText(/terms and conditions/i);
+  userEvent.hover(termsAndConditions);
+
+  const popover = screen.getByText(/no ice cream will actually be delivered/i);
+  expect(popover).toBeInTheDocument();
+
+  userEvent.unhover(termsAndConditions);
+  const nullPopoverAgain = screen.queryByText(
+    /no ice cream will actually be delivered/i
+  );
+  expect(nullPopoverAgain).not.toBeInTheDocument();
+});
