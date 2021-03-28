@@ -8,3 +8,11 @@ export function calculateSubtotal(optionType, optionCounts) {
 
   return optionCount * pricePerItem[optionType];
 }
+
+export function formatCurrency(amount) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'GBP',
+    minimumFractionDigits: 2,
+  }).format(amount);
+}
