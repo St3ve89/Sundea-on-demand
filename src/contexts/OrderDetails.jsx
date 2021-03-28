@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useMemo, useState } from 'react';
-import calculateSubtotal from '../utils/utils';
+import { calculateSubtotal } from '../utils/utils';
 
 export const OrderDetails = createContext();
 
