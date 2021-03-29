@@ -13,9 +13,7 @@ export default function ToppingOption({ name, imagePath, updateItemCount }) {
         alt={`${name} topping`}
       />
       <Form.Group controlId={`${name}-topping-checkbox`}>
-        <Col xs="5">
-          <Form.Check onChange={handleChange} type="checkbox" label={name} />
-        </Col>
+        <Form.Check onChange={handleChange} type="checkbox" label={name} />
       </Form.Group>
     </Col>
   );
