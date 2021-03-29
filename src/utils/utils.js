@@ -2,7 +2,6 @@ import { pricePerItem } from '../constants';
 
 export function calculateSubtotal(optionType, optionCounts) {
   let optionCount = 0;
-  console.log({ optionCounts });
   for (const count of optionCounts[optionType].values()) {
     optionCount += count;
   }
