@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import AlertBanner from '../../components/AlertBanner/AlertBanner';
 import { pricePerItem } from '../../constants';
 import { useOrderDetails } from '../../hooks/useOrderDetails';
+import { formatCurrency } from '../../utils/utils';
 import ScoopOption from './ScoopOption';
 import ToppingOption from './ToppingOption';
 
@@ -40,7 +41,7 @@ export default function Options({ optionType }) {
   return (
     <>
       <h2>{title}</h2>
-      <p>£{pricePerItem[optionType]} each</p>
+      <p>{formatCurrency(pricePerItem[optionType])} each</p>
       <p>
         {title} total: {orderDetails.totals[optionType]}
       </p>
