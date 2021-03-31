@@ -19,4 +19,7 @@ export const handlers = [
       ])
     );
   }),
+  rest.post('http://localhost:3000/order', (req, res, ctx) => {
+    return res(ctx.json({ orderNumber: 123455676 }));
+  }),
 ];
