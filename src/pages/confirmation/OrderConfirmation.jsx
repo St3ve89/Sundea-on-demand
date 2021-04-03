@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useOrderDetails } from '../../hooks/useOrderDetails';
 
 export default function OrderConfirmation({ setOrderPhase }) {
-  const [resetOrder] = useOrderDetails();
+  const [, , resetOrder] = useOrderDetails();
   const [orderNumber, setOrderNumber] = useState(null);
 
   useEffect(() => {
